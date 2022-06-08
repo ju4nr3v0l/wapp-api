@@ -20,13 +20,13 @@ $router->get('/', function () use ($router) {
 
 //test crud api group
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('test',  ['uses' => 'TestController@showAllTests']);
+    $router->get('tests',  ['uses' => 'TestController@showAllTests']);
 
-    $router->get('test/{id}', ['uses' => 'TestController@showOneTest']);
+    $router->get('tests/{id}', ['uses' => 'TestController@showOneTest']);
 
-    $router->post('test', ['uses' => 'TestController@create']);
+    $router->post('tests', ['uses' => 'TestController@create']);
 
-    $router->delete('test/{id}', ['uses' => 'TestController@delete']);
+    $router->delete('tests/{id}', ['uses' => 'TestController@delete']);
 
-    $router->put('test/{id}', ['uses' => 'TestController@update']);
+    $router->put('tests/{id}', ['uses' => 'TestController@update']);
 });
