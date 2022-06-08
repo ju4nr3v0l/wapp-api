@@ -13,7 +13,7 @@ class Test extends Migration
      */
     public function up()
     {
-        Schema::create('test', function (Blueprint $table) {
+        Schema::create('tests', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->string('apellido');
@@ -28,6 +28,6 @@ class Test extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('test');
+        Schema::dropIfExists('tests');
     }
 }
