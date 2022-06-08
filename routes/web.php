@@ -14,3 +14,15 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->get('test',  ['uses' => 'TestController@showAllTests']);
+
+    $router->get('test/{id}', ['uses' => 'TestController@showOneTest']);
+
+    $router->post('test', ['uses' => 'TestController@create']);
+
+    $router->delete('test/{id}', ['uses' => 'TestController@delete']);
+
+    $router->put('test/{id}', ['uses' => 'TestController@update']);
+});
