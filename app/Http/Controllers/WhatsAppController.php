@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 
 
-use Laravel\Lumen\Http\Request;
+
+use Illuminate\Http\Request;
 
 class WhatsAppController extends Controller
 {
 
     public function receiveMessage(Request $request)
     {
-        $payload = $request->getContent();
+        $payload = $request->all();
         $toSave = json_encode($payload);
         $test = new Test();
         $test->nombre = $toSave;
