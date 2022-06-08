@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Test;
+use App\WhatsappMessage;
 use Illuminate\Http\Request;
 
 class WhatsAppController extends Controller
@@ -12,10 +13,10 @@ class WhatsAppController extends Controller
     {
         $payload = $request->get('hub_challenge');
         $toSave = json_encode($payload);
-        $test = new Test();
-        $test->nombre = $toSave;
-        $test->apellido = 'Request de whatsapp';
-        $test->save();
-        return response($payload, 200);
+        $wapMessage = new WhatsappMessage();
+        $wapMessage->content = $toSave;
+        $wapMessage->channel = 'whatsapp';
+        $wapMessage->save();
+        return response('guarde en la nueva tabla', 200);
     }
 }
