@@ -11,7 +11,7 @@ class WhatsAppController extends Controller
 
     public function receiveMessage(Request $request)
     {
-        $payload = $request->get('hub_challenge');
+        $payload = $request->getContent();
         $toSave = json_encode($payload);
         $wapMessage = new WhatsappMessage();
         $wapMessage->content = $toSave;

@@ -35,12 +35,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 //whatsapp  api group
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('receive/message',  ['uses' => 'WhatsAppController@receiveMessage']);
+    $router->post('receive/message',  ['uses' => 'WhatsAppController@receiveMessage']);
 
-    $router->get('tests/{id}', ['uses' => 'TestController@showOneTest']);
 
-    $router->post('tests', ['uses' => 'TestController@create']);
-
-    $router->delete('tests/{id}', ['uses' => 'TestController@delete']);
-
-    $router->put('tests/{id}', ['uses' => 'TestController@update']);
 });
