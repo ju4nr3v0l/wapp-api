@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Test;
 use Illuminate\Http\Request;
 
-class AuthorController extends Controller
+class TestController extends Controller
 {
     /**
      * Display a listing of the resource.
