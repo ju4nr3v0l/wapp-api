@@ -15,6 +15,8 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
+
+//test crud api group
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('test',  ['uses' => 'TestController@showAllTests']);
 
